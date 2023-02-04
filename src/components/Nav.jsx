@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 
 const Nav = () => {
   const router = useRouter();
-  //console.log(router);
 
   return (
     <>

@@ -5,7 +5,6 @@ import Link from "next/link";
 
 const Sidebar = () => {
   const { categories } = useStore();
-  //console.log(categories);
 
   return (
     <>

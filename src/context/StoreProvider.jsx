@@ -14,6 +14,7 @@ const StoreProvider = ({ children }) => {
   const [modal, setModal] = useState(false);
   const [order, setOrder] = useState([]);
   const [name, setName] = useState("");
+  const [total, setTotal] = useState(0);
 
   const router = useRouter();
 
@@ -35,6 +36,15 @@ const StoreProvider = ({ children }) => {
   useEffect(() => {
     setCurrentCategory(categories[0]);
   }, [categories]);
+
+  //Calculate Total
+  useEffect(() => {
+    const newTotal = order.reduce(
+      (total, product) => product.price * product.quantity + total,
+      0
+    );
+    setTotal(newTotal);
+  }, [order]);
 
   //Identify Current Category
   const handleCurrentCategory = (id) => {
@@ -69,6 +79,7 @@ const StoreProvider = ({ children }) => {
     setModal(false);
   };
 
+  //Edit Quantity
   const handleEditQuantity = (id) => {
     const updateProduct = order.filter((product) => product.id === id);
     setProduct(updateProduct[0]);
@@ -79,6 +90,36 @@ const StoreProvider = ({ children }) => {
   const handleDeleteProduct = (id) => {
     const updatedOrder = order.filter((product) => product.id !== id);
     setOrder(updatedOrder);
+  };
+
+  //Send Order to DataBase
+  const placeOrder = async (e) => {
+    e.preventDefault();
+
+    try {
+      const { data } = await axios.post("/api/orders", {
+        order,
+        name,
+        total,
+        date: Date.now().toString(),
+      });
+
+      //App Reset
+      setCurrentCategory(categories[0]);
+      setOrder([]);
+      setName("");
+      setTotal(0);
+
+      toast.success("Order placed successfully!");
+
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
+
+      //console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -97,6 +138,8 @@ const StoreProvider = ({ children }) => {
         handleEditQuantity,
         name,
         setName,
+        placeOrder,
+        total,
       }}
     >
       {children}

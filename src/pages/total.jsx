@@ -1,9 +1,10 @@
 import { useEffect, useCallback } from "react";
 import Layout from "@/layout/Layout";
 import useStore from "@/hooks/useStore";
+import { moneyFormat } from "../helpers/index";
 
 const Total = () => {
-  const { order, name, setName } = useStore();
+  const { order, name, setName, placeOrder, total } = useStore();
 
   //Returns true or false. Checks if there is something in the order
   const checkOrder = useCallback(() => {
@@ -13,11 +14,6 @@ const Total = () => {
   useEffect(() => {
     checkOrder();
   }, [order, checkOrder]);
-
-  const placeOrder = (e) => {
-    e.preventDefault();
-    console.log("place order");
-  };
 
   return (
     <Layout page=" - Total">
@@ -45,7 +41,8 @@ const Total = () => {
 
         <div className="mt-10">
           <p className="text-2xl">
-            Total a pagar: <span className="font-bold"></span>
+            Total Due: {moneyFormat(total)}
+            <span className="font-bold"></span>
           </p>
         </div>
 
