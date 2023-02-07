@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import OrdersSidebar from "@/components/OrdersSidebar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -21,6 +22,7 @@ export default function AdminLayout({ children, page }) {
             src="/img/sidebar/logo.png"
             alt="imagen logotipo"
           />
+          <OrdersSidebar />
         </aside>
 
         <main className="md:w-8/12 xl:w-3/4 2xl:w-4/5 h-screen overflow-y-scroll">
