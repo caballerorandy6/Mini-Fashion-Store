@@ -37,6 +37,16 @@ const Nav = () => {
         >
           Total
         </Link>
+        <Link
+          href="/admin"
+          className={`text-2xl font-bold p-2 text-amber-500 hover:text-white hover:bg-amber-500 hover:p-2 hover:rounded hover:transition-colors ${
+            router.pathname === "/admin"
+              ? "bg-amber-500 text-white p-2 transition-colors rounded"
+              : ""
+          }`}
+        >
+          Admin
+        </Link>
       </nav>
     </>
   );
