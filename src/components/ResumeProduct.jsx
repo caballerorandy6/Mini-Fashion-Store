@@ -15,6 +15,7 @@ const ResumeProduct = ({ product }) => {
           height={300}
           src={`/img/${image}.webp`}
           alt={`Product Image ${name}`}
+          priority
         />
       </div>
       <div className="flex items-center justify-between w-9/12">

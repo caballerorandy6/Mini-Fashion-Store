@@ -32,6 +32,7 @@ const ProductModal = () => {
           width={300}
           height={400}
           alt={`Product Image ${name}`}
+          priority
         />
       </div>
 
