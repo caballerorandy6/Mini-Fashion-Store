@@ -23,7 +23,7 @@ const Admin = () => {
           <p className="text-2xl my-10">Manage orders</p>
           <div>
             <Link
-              href="/admin"
+              href="/"
               className=" text-blue-600 text-xl uppercase font-bold my-10"
             >
               <div className="flex items-center gap-4">

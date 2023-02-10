@@ -19,9 +19,9 @@ export default function AdminLayout({ children, page }) {
           <Link href="/">
             <Image
               className="p-10 object-fill"
-              width={300}
-              height={100}
-              src="/img/sidebar/logo.png"
+              width={400}
+              height={200}
+              src="/img/logo.webp"
               alt="imagen logotipo"
               priority
             />
