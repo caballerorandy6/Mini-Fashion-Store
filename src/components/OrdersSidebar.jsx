@@ -5,7 +5,7 @@ const OrdersSidebar = () => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col w-3-12">
+    <nav className="flex flex-col w-3-12 mt-10">
       <Link
         href="/pendingOrders"
         className={`border p-10 text-center text-2xl font-bold hover:text-white hover:bg-amber-500 transition-colors ${
@@ -26,7 +26,7 @@ const OrdersSidebar = () => {
       >
         Completed Orders
       </Link>
-    </div>
+    </nav>
   );
 };
 
