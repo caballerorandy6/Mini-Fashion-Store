@@ -21,7 +21,7 @@ export default function AdminLayout({ children, page }) {
               className="p-10 object-fill"
               width={400}
               height={200}
-              src="/img/logo.webp"
+              src="/img/sidebar/logo.webp"
               alt="imagen logotipo"
               priority
             />

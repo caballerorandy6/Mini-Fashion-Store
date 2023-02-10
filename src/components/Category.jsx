@@ -13,7 +13,7 @@ const Category = ({ category }) => {
       } flex gap-10 w-full border items-center p-5 hover:text-amber-400 transition-colors rounded`}
     >
       <Image
-        src={`/img/${icon}.webp`}
+        src={`/img/sidebar/${category?.icon}.webp`}
         width={100}
         height={100}
         alt="Category Image"
@@ -22,10 +22,10 @@ const Category = ({ category }) => {
       />
 
       <button
-        onClick={() => handleCurrentCategory(id)}
+        onClick={() => handleCurrentCategory(category.id)}
         className="text-2xl font-bold hover cursor-pointer uppercase"
       >
-        {name}
+        {category.name}
       </button>
     </div>
   );
