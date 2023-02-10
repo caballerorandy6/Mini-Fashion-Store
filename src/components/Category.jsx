@@ -10,7 +10,7 @@ const Category = ({ category }) => {
     <div
       className={`${
         currentCategory?.id === id ? "text-amber-500 border-black border-2" : ""
-      } flex gap-4 w-full border items-center p-5 hover:text-amber-400 transition-colors rounded`}
+      } flex gap-10 w-full border items-center p-5 hover:text-amber-400 transition-colors rounded`}
     >
       <Image
         src={`/img/${icon}.webp`}
