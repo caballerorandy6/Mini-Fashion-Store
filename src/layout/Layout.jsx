@@ -30,7 +30,6 @@ const Layout = ({ children, page }) => {
       <Head>
         <title>Fashion Store {page}</title>
         <meta name="description" content="Mini Fashion Store" />
-        <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
       </Head>
       <div className="flex">
         <aside className="w-3/12">

@@ -9,23 +9,16 @@ const Category = ({ category }) => {
   return (
     <div
       className={`${
-        currentCategory?.id === id ? "text-amber-500 border-black border-2" : ""
-      } flex gap-10 w-full border items-center p-5 hover:text-amber-400 transition-colors rounded`}
+        currentCategory?.id === id
+          ? "text-amber-500 border-amber-500 border"
+          : ""
+      } flex gap-10 justify-center w-full border items-center p-5 hover:text-amber-400 hover:border-amber-500 transition-colors rounded`}
     >
-      <Image
-        src={`/img/sidebar/${category?.icon}.webp`}
-        width={100}
-        height={100}
-        alt="Category Image"
-        priority
-        className="object-fill"
-      />
-
       <button
-        onClick={() => handleCurrentCategory(category.id)}
+        onClick={() => handleCurrentCategory(id)}
         className="text-2xl font-bold hover cursor-pointer uppercase"
       >
-        {category.name}
+        {name}
       </button>
     </div>
   );
